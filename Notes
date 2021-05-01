@@ -33,3 +33,18 @@ https://stackoverflow.com/questions/45088006/nodejs-error-self-signed-certificat
 
 db.users.find().pretty()
 Show the database data? ng users. Sa mongodb
+
+{
+  accepted: [ 'miya.kadita01@gmail.com' ],
+  rejected: [],
+  envelopeTime: 834,
+  messageTime: 336,
+  messageSize: 619,
+  response: '250 Ok: queued as PZQxaWXsRnWvRlhNs30mrA',
+  envelope: {
+    from: 'vilmarcabanero@gmail.com',
+    to: [ 'miya.kadita01@gmail.com' ]
+  },
+  messageId: '<da0648b2-daa6-8b55-b20a-f33b20adc8a6@gmail.com>'
+}
+da0648b2-daa6-8b55-b20a-f33b20adc8a6

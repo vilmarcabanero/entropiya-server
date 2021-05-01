@@ -79,6 +79,8 @@ exports.forgotpassword = async (req, res, next) => {
 			<a href=${resetUrl} clicktracking=off>${resetUrl}</a>
 		`
 
+		console.log(resetToken)
+
 		try {
 			await sendEmail({
 				to: user.email,
