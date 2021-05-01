@@ -2,3 +2,18 @@ require('crypto').randomBytes(35).toString("hex")
 To generate random string for JWT_SECRET
 
 May 1, 11:38 PM, 1:23:29 video
+
+{
+    "username": "Iona",
+    "email": "vilmarcabanero@gmail.com",
+    "password": "fuckclan123"
+}
+
+try to register a real email using postman
+{
+    "sucess": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGQ4NTkwYTI2N2EzMTg4Yzc5NWM1MSIsImlhdCI6MTYxOTg4NzUwNCwiZXhwIjoxNjE5ODg4MTA0fQ.w7VsTKhBMpojEV49gwp8-8A88lChRWsOPGAGwrinc3Y"
+}
+
+Error: self signed certificate in certificate chain
+npm config set strict-ssl=false
