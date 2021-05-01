@@ -1,2 +1,4 @@
 require('crypto').randomBytes(35).toString("hex")
 To generate random string for JWT_SECRET
+
+May 1, 11:38 PM, 1:23:29 video
