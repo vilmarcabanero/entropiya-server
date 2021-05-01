@@ -1,0 +1,2 @@
+require('crypto').randomBytes(35).toString("hex")
+To generate random string for JWT_SECRET
