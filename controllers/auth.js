@@ -100,6 +100,8 @@ exports.forgotpassword = async (req, res, next) => {
 	}
 }
 
+//'Error with send email reset password, Error: self signed certificate in certificate chain, under review pa ang sendgrid account ko. Try next time or check the code difference baka may mali sa code ko.'
+
 exports.resetpassword = (req, res, next) => {
 	res.send('Reset Password Route')
 }
