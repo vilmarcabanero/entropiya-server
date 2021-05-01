@@ -10,7 +10,7 @@ const sendEmail = options => {
 		},
 		tls: {
 			rejectUnauthorized: false,
-		},
+		}, 
 	})
 
 	// var transporter = nodemailer.createTransport(
