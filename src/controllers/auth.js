@@ -49,7 +49,7 @@ exports.login = async (req, res, next) => {
 		// }
 
 		if (!user) {
-			return next(new ErrorResponse('User does not exist'), 401)
+			return next(new ErrorResponse(`User does not exist`), 401)
 		}
 
 		//Invalid email to User does not exist
