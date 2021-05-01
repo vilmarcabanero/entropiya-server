@@ -14,7 +14,15 @@ exports.register = async (req, res, next) => {
 		})
 		sendToken(user, 201, res)
 	} catch (error) {
-		next(error)
+		// next(error)
+		const user = await User.findOne({ username })
+		if(user) {
+			next(new ErrorResponse(`${username} is already taken. Please use another.`))
+		}
+
+		if(email) {
+			next(new ErrorResponse(`${email} is already taken. Please use another.`))
+		}
 	}
 }
 
