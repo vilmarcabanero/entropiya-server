@@ -35,7 +35,7 @@ exports.login = async (req, res, next) => {
 		const user = await User.findOne({ email }).select('+password')
 
 		// if (!user && !isMatch) {
-		// 	return next(new ErrorResponse('Invalid credentials'), 401) 
+		// 	return next(new ErrorResponse('Invalid credentials'), 401)
 		// }
 
 		if (!user) {
@@ -56,8 +56,35 @@ exports.login = async (req, res, next) => {
 	}
 }
 
-exports.forgotpassword = (req, res, next) => {
-	res.send('Forgot Password Route')
+exports.forgotpassword = async (req, res, next) => {
+	const { email } = req.body
+
+	try {
+		const user = await User.findOne({ email })
+
+		if (!user) {
+			return next(new ErrorResponse('Email could not be sent'), 404)
+		}
+
+		const resetToken = user.getResetPasswordToken()
+
+		await user.save()
+		const resetUrl = `${process.env.ENTROPIYA_CLIENT_URL}/passwordreset/${resetToken}`
+
+		const message = `
+			<h1>You have requested a password reset</h1>
+			<p>Please go to this link to reset your password</p>
+			<a href=${resetUrl} clicktracking=off>${resetUrl}</a>
+		`
+
+		try {
+				
+		} catch (error) {
+			
+
+		}
+
+	} catch (error) {}
 }
 
 exports.resetpassword = (req, res, next) => {
