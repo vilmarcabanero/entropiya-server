@@ -1,7 +1,7 @@
 const env = require('dotenv').config()
-const connectDB = require('./config/db')
+const connectDB = require('./src/config/db')
 const express = require('express')
-const errorHandler = require('./middleware/error')
+const errorHandler = require('./src/middleware/error')
 
 //connect DB
 connectDB()
@@ -9,8 +9,8 @@ connectDB()
 const app = express() 
 app.use(express.json())
 //Connect our route
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/private', require('./routes/private'))
+app.use('/api/auth', require('./src/routes/auth'))
+app.use('/api/private', require('./src/routes/private'))
 
 //Error Handler (Should be last piece of middleware)
 app.use(errorHandler)
