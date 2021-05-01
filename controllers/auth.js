@@ -10,10 +10,7 @@ exports.register = async (req, res, next) => {
 			email,
 			password,
 		})
-		res.status(201).json({
-			success: true,
-			token: "23fef34f",
-		})
+		sendToken(user, 201, res)
 	} catch (error) {
 		next(error)
 	}
@@ -37,10 +34,8 @@ exports.login = async (req, res, next) => {
 	try {
 		const user = await User.findOne({ email }).select('+password')
 
-		
-
 		// if (!user && !isMatch) {
-		// 	return next(new ErrorResponse('Invalid credentials'), 401)
+		// 	return next(new ErrorResponse('Invalid credentials'), 401) 
 		// }
 
 		if (!user) {
@@ -55,10 +50,7 @@ exports.login = async (req, res, next) => {
 			return next(new ErrorResponse('Invalid password'), 401)
 		}
 
-		res.status(200).json({
-			success: true,
-			token: 'tr34f3443fc',
-		})
+		sendToken(user, 200, res)
 	} catch (error) {
 		res.status(500).json({ sucess: false, error: error.message })
 	}
@@ -72,6 +64,7 @@ exports.resetpassword = (req, res, next) => {
 	res.send('Reset Password Route')
 }
 
-// const sendToken = (user, statusCode, res) => {
-// 	const token = 
-// } 
+const sendToken = (user, statusCode, res) => {
+	const token = user.getSignedToken()
+	res.status(statusCode).json({ sucess: true, token })
+}
