@@ -12,7 +12,7 @@ exports.register = async (req, res, next) => {
 		})
 		res.status(201).json({
 			success: true,
-			user,
+			token: "23fef34f",
 		})
 	} catch (error) {
 		next(error)
@@ -71,3 +71,7 @@ exports.forgotpassword = (req, res, next) => {
 exports.resetpassword = (req, res, next) => {
 	res.send('Reset Password Route')
 }
+
+// const sendToken = (user, statusCode, res) => {
+// 	const token = 
+// } 
