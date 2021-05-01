@@ -20,3 +20,13 @@ npm config set strict-ssl=false
 
 '1:46:39 Error with send email reset password, Error: self signed certificate in certificate chain, under review pa ang sendgrid account ko. Try next time or check the code difference baka may mali sa code ko.'
 
+http://localhost:5000/api/auth/forgotpassword
+{
+    "email": "miya.kadita01@gmail.com"
+}
+{
+    "success": true,
+    "data": "Email Sent"
+}
+Error: self signed certificate in certificate chain
+https://stackoverflow.com/questions/45088006/nodejs-error-self-signed-certificate-in-certificate-chain
