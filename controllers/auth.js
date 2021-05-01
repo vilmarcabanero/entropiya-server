@@ -71,7 +71,7 @@ exports.forgotpassword = async (req, res, next) => {
 		const resetToken = user.getResetPasswordToken()
 
 		await user.save()
-		const resetUrl = `${process.env.ENTROPIYA_CLIENT_URL}/passwordreset/${resetToken}`
+		const resetUrl = `${process.env.ENTROPIYA_CLIENT_URL}/resetpassword/${resetToken}`
 
 		const message = `
 			<h1>You have requested a password reset</h1>
