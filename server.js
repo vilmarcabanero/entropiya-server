@@ -7,23 +7,18 @@ const cors = require("cors");
 const importData = require('./data.json')
 
 //connect DB
-connectDB()
+connectDB() 
 
 const app = express() 
 app.use(express.json()) 
 app.use(cors());
 //Connect our route
-app.use('https://entropiya-client.herokuapp.com/api/auth', require('./routes/auth'))
-app.use('https://entropiya-client.herokuapp.com/api/private', require('./routes/private'))
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/private', require('./routes/private'))
 
 //Error Handler (Should be last piece of middleware)
 app.use(errorHandler)
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://www.entropiya.ph/"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 
 app.get('/', (req, res) => {
