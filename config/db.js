@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const CONNECTION_URL = `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@entropiya-free-cluster.vo2hc.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`
-mongoose
+
+console.log(process.env.MONGO_DB_URI)
 
 const connectDB = async () => {
 	await mongoose
-		.connect(CONNECTION_URL, {
+		.connect(process.env.MONGO_DB_URI, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			useCreateIndex: true,
