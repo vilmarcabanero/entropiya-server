@@ -134,7 +134,7 @@ exports.resetpassword = async (req, res, next) => {
 
 		await user.save()
 		res.status(201).json({
-			sucess: true,
+			success: true,
 			data: "Password Reset Success",
 		})
 	} catch (error) {
