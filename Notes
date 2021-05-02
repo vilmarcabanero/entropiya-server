@@ -50,3 +50,6 @@ Show the database data? ng users. Sa mongodb
 da0648b2-daa6-8b55-b20a-f33b20adc8a6
 
 2:07:37 na
+
+
+  "proxy": "https://entropiya-server.herokuapp.com/",
