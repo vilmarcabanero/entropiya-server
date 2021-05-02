@@ -1,0 +1,52 @@
+require('crypto').randomBytes(35).toString("hex")
+To generate random string for JWT_SECRET
+
+May 1, 11:38 PM, 1:23:29 video
+
+{
+    "username": "Iona",
+    "email": "vilmarcabanero@gmail.com",
+    "password": "fuckclan123"
+}
+
+try to register a real email using postman
+{
+    "sucess": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGQ4NTkwYTI2N2EzMTg4Yzc5NWM1MSIsImlhdCI6MTYxOTg4NzUwNCwiZXhwIjoxNjE5ODg4MTA0fQ.w7VsTKhBMpojEV49gwp8-8A88lChRWsOPGAGwrinc3Y"
+}
+
+Error: self signed certificate in certificate chain
+npm config set strict-ssl=false
+
+'1:46:39 Error with send email reset password, Error: self signed certificate in certificate chain, under review pa ang sendgrid account ko. Try next time or check the code difference baka may mali sa code ko.'
+
+http://localhost:5000/api/auth/forgotpassword
+{
+    "email": "miya.kadita01@gmail.com"
+}
+{
+    "success": true,
+    "data": "Email Sent"
+}
+Error: self signed certificate in certificate chain
+https://stackoverflow.com/questions/45088006/nodejs-error-self-signed-certificate-in-certificate-chain
+
+db.users.find().pretty()
+Show the database data? ng users. Sa mongodb
+
+{
+  accepted: [ 'miya.kadita01@gmail.com' ],
+  rejected: [],
+  envelopeTime: 834,
+  messageTime: 336,
+  messageSize: 619,
+  response: '250 Ok: queued as PZQxaWXsRnWvRlhNs30mrA',
+  envelope: {
+    from: 'vilmarcabanero@gmail.com',
+    to: [ 'miya.kadita01@gmail.com' ]
+  },
+  messageId: '<da0648b2-daa6-8b55-b20a-f33b20adc8a6@gmail.com>'
+}
+da0648b2-daa6-8b55-b20a-f33b20adc8a6
+
+2:07:37 na
