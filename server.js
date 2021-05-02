@@ -20,9 +20,9 @@ app.use('/private', require('./routes/private'))
 //Error Handler (Should be last piece of middleware)
 app.use(errorHandler)
 
-// app.get('/', (req, res) => {
-// 	res.send('Hello World')
-// })
+app.get('/', (req, res) => {
+	res.send('Hello World')
+})
 
 // app.get('/products/:id', function (req, res, next) {
 //   res.json({msg: 'This is CORS-enabled for all origins!'})
