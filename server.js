@@ -12,26 +12,25 @@ connectDB()
 const app = express() 
 app.use(express.json()) 
 app.use(cors());
+
 //Connect our route
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/private', require('./routes/private'))
+app.use('/auth', require('./routes/auth'))
+app.use('/private', require('./routes/private'))
 
 //Error Handler (Should be last piece of middleware)
 app.use(errorHandler)
 
+// app.get('/', (req, res) => {
+// 	res.send('Hello World')
+// })
 
+// app.get('/products/:id', function (req, res, next) {
+//   res.json({msg: 'This is CORS-enabled for all origins!'})
+// })
 
-app.get('/', (req, res) => {
-	res.send('Hello World')
-})
-
-app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-})
-
-app.get('/questions', (req, res) => {
-	res.send(importData)
-})
+// app.get('/questions', (req, res) => {
+// 	res.send(importData)
+// })
 
 const PORT = process.env.PORT || 5000
 
