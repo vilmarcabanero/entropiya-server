@@ -3,6 +3,8 @@ const connectDB = require('./config/db')
 const express = require('express')
 const errorHandler = require('./middleware/error')
 
+const importData = require('./data.json')
+
 //connect DB
 connectDB()
 
@@ -14,6 +16,14 @@ app.use('/api/private', require('./routes/private'))
 
 //Error Handler (Should be last piece of middleware)
 app.use(errorHandler)
+
+app.get('/', (req, res) => {
+	res.send('Hello World')
+})
+
+app.get('/players', (req, res) => {
+	res.send(importData)
+})
 
 const PORT = process.env.PORT || 5000
 
