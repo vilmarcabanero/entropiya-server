@@ -20,7 +20,9 @@ exports.register = async (req, res, next) => {
 			next(new ErrorResponse(`${username} is already taken. Please use another.`))
 		}
 
-		if(email) {
+		const userWithEmail = await User.findOne({ email })
+
+		if(userWithEmail) {
 			next(new ErrorResponse(`${email} is already taken. Please use another.`))
 		}
 	}
