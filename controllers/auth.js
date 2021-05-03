@@ -5,14 +5,16 @@ const sendEmail = require('../utils/sendEmail')
 
 exports.register = async (req, res, next) => {
 	const { username, email, password } = req.body
-
+	let { dateRegistered } = req.body
 	try {
 		const user = await User.create({
 			username,
 			email,
 			password,
+			dateRegistered,
 		})
 		sendToken(user, 201, res)
+
 	} catch (error) {
 		// next(error)
 		const user = await User.findOne({ username })
