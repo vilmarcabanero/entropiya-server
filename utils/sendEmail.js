@@ -8,9 +8,15 @@ const sendEmail = options => {
 			user: process.env.EMAIL_USERNAME,
 			pass: process.env.EMAIL_PASSWORD,
 		},
+<<<<<<< HEAD
 		tls: {
 			rejectUnauthorized: false,
 		}, 
+=======
+		// tls: {
+		// 	rejectUnauthorized: false,
+		// }, 
+>>>>>>> 5e11db96500ba503979927124477addeb0e1751b
 	})
 
 	// var transporter = nodemailer.createTransport(

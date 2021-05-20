@@ -26,6 +26,13 @@ const UserSchema = new mongoose.Schema({
 	},
 	resetPasswordToken: String,
 	resetPasswordExpire: Date,
+<<<<<<< HEAD
+=======
+	dateRegistered: {
+		type: String,
+
+	}
+>>>>>>> 5e11db96500ba503979927124477addeb0e1751b
 })
 
 UserSchema.pre('save', async function (next) {
